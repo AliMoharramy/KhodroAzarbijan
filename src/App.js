@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Footer from "./component/Footer";
+import Header from "./component/Header";
+import News from "./component/News";
+import Products from "./component/Products";
+import Slider from "./component/Slider";
+import Representation from "./component/Representation";
+import AboutUs from "./component/AboutUs";
 
 function App() {
+  const [page, setPage] = useState("صفحه اصلی");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header page={page} setPage={setPage} />
+      {page === "صفحه اصلی" && (
+        <>
+          <Slider />
+          <News />
+        </>
+      )}
+      {page === "محصولات" && <Products />}
+      {page === "نمایندگی‌ها" && <Representation />}
+      {page === "درباره‌ما" && <AboutUs />}
+      <Footer />
     </div>
   );
 }
+
+window.onscroll = function (e) {
+  console.log(e);
+};
 
 export default App;
