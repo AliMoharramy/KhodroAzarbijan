@@ -1,26 +1,32 @@
 import CardItem from "./CardItem";
 
-export default function News() {
+export default function News({ setNews, setSelectedNews, AllNewsap }) {
+  function setSelected(id) {
+    setSelectedNews(id);
+  }
   return (
     <section className="News">
       <div className="container">
         <div className="news__title">
-          <button>همه اخبار</button>
-          <p>آخرین اخبار</p>
+          <button onClick={(e) => setNews(true)}>
+            مشاهده همه اخبار<i class="fa fa-newspaper-o"></i>
+          </button>
+          <div>
+            <p>آخرین اخبار</p>
+            <i class="fa fa-pencil-square-o"></i>
+          </div>
         </div>
         <div className="news__cards">
-          <CardItem
-            title="انتصاب مدیر عامل جدید شرکت خودروی آذربایجان"
-            image="https://www.digikala.com/mag/wp-content/uploads/2023/10/08.03-27.jpg"
-          />
-          <CardItem
-            title="رشد ۲۰۰ درصدي توليد در سيباموتور"
-            image="https://www.digikala.com/mag/wp-content/uploads/2023/10/08.03-45.jpg"
-          />
-          <CardItem
-            title="عرضه کشنده تک محور و کامیون کمپرسی سیبا موتور در بورس کالا"
-            image="https://www.digikala.com/mag/wp-content/uploads/2023/10/08.03-17.jpg"
-          />
+          {Array.from({ length: 3 }, (_, i) => {
+            return (
+              <CardItem
+                id={AllNewsap[i].id}
+                title={AllNewsap[i].title}
+                image={AllNewsap[i].image}
+                onsetSelected={setSelected}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

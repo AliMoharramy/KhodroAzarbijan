@@ -1,4 +1,4 @@
-export default function Header({ page, setPage }) {
+export default function Header({ page, onselectPage }) {
   const navItems = [
     "تماس با ما",
     "نمایندگی‌ها",
@@ -12,8 +12,8 @@ export default function Header({ page, setPage }) {
       <div className="header_contaner">
         <div className="right-nav">
           <div className="logo">
-            <a href="#">
-              <img src="https://amicoir.com/images/logo_fa.png" alt="" />
+            <a href="Header">
+              <img src={require("../media/Group 3.png")} alt="" />
             </a>
           </div>
           <div className="language">
@@ -27,7 +27,7 @@ export default function Header({ page, setPage }) {
               return (
                 <li
                   key={i}
-                  onClick={(e) => setPage(e.target.innerText)}
+                  onClick={(e) => onselectPage(e.target.innerText)}
                   className={page === navItems[i] && "activebtn"}
                 >
                   {navItems[i]}

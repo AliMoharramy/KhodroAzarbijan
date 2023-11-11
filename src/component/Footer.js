@@ -4,8 +4,8 @@ export default function Footer() {
       <div className="container footer__container">
         <div className="footer__logo">
           <div className="logo footer__logo">
-            <a href="#">
-              <img src="https://amicoir.com/images/logo_fa.png" alt="" />
+            <a href=".Footer">
+              <img src={require("../media/Group 3.png")} alt="" />
             </a>
           </div>
         </div>

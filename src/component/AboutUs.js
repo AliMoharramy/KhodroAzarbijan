@@ -3,10 +3,17 @@ export default function AboutUs() {
     <section className="about-us">
       <div className="container">
         <div className="about__header">
-          <img
-            src="https://amicoir.com/images/1401/06/10/800px-____1.jpg"
-            alt=""
-          />
+          <div className="about-img-top">
+            <img
+              src="https://amicoir.com/images/1401/06/10/800px-____1.jpg"
+              alt=""
+            />
+            <img
+              src={require("../media/bigDotes.png")}
+              className="dotted"
+              alt=""
+            />
+          </div>
           <div>
             <h4>خودرو در یک نگاه</h4>
             <p>
@@ -38,6 +45,10 @@ export default function AboutUs() {
             سال از احداث اولین واحد صنعتی، اقدام به توسعه و تأسیس شرکت‌ها و
             مؤسسات متعددی نموده که مهم‌ترین آن‌ها به شرح ذیل است:
           </p>
+          <img
+            src="https://amicoir.com/images/1401/06/10/800px-____1.jpg"
+            alt=""
+          />
           <p>
             آمیکو علاوه بر دریافت علامت استاندارد ایران و ثبت آن بر روی تمامی
             محصولات تولیدی خود، آزمایشگاه‌های مجهز و پیشرفته‌ای ایجاد کرده است
