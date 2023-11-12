@@ -17,10 +17,11 @@ export default function NewsPage({ setSelectedNews, Newsap, AllNewsap }) {
   return (
     <div className="newsPage">
       <div className="container">
-        <i
-          class="fa fa-chevron-circle-left productBackbtn"
-          onClick={() => setSelectedNews(0)}
-        ></i>
+        <div className="productBackbtn" onClick={() => setSelected(0)}>
+          <i class="fa fa-chevron-left"></i>
+          بازگشت
+        </div>
+
         <div className="news-container">
           <div className="newsInfo">
             <img src={Newsap.image} alt="" />

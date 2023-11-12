@@ -7,6 +7,18 @@ const detailSelecterItems = ["آلبوم تصاویر", "ویژگی‌های ف�
 export default function ProductPage({ item, setSelectedProduct }) {
   const [productInfo, setProductInfo] = useState("ویژگی‌های فنی");
 
+  window.onscroll = function (ev) {
+    const headerPart = document.getElementsByClassName("header_contaner");
+    const sliderPart = document.getElementsByClassName("product-page");
+    if (window.scrollY >= 160) {
+      headerPart[0].classList.add("fixed-header");
+      sliderPart[0].classList.add("after-scrolled");
+    } else {
+      headerPart[0].classList.remove("fixed-header");
+      sliderPart[0].classList.remove("after-scrolled");
+    }
+  };
+
   return (
     <section className="product-page">
       <div className="container">

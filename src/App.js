@@ -11,6 +11,7 @@ import AllNews from "./component/AllNews";
 import NewsPage from "./component/NewsPage";
 import Forms from "./component/Forms";
 import ContactUs from "./component/ContactUs";
+import PopupNav from "./component/PopupNav";
 
 const products = [
   {
@@ -78,12 +79,19 @@ function App() {
   const [selectedProduct, setSelectedProduct] = useState(0);
   const [news, setNews] = useState(false);
   const [selectedNews, setSelectedNews] = useState(0);
+  const [isPopup, setIsPopup] = useState(false);
+  const [selectedForm, setSelectedForm] = useState("فروش");
 
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+  }
   function selectPage(e) {
     setPage(e);
     setSelectedProduct(0);
     setNews(false);
     setSelectedNews(0);
+    scrollToTop();
+    setIsPopup(false);
   }
 
   window.onscroll = function (ev) {
@@ -124,7 +132,14 @@ function App() {
 
   return (
     <div className="App">
-      <Header page={page} onselectPage={selectPage} />
+      {isPopup && (
+        <PopupNav
+          page={page}
+          onselectPage={selectPage}
+          setIsPopup={setIsPopup}
+        />
+      )}
+      <Header page={page} onselectPage={selectPage} setIsPopup={setIsPopup} />
 
       {selectedNews === 0 ? (
         news ? (
@@ -132,6 +147,7 @@ function App() {
             setNews={setNews}
             AllNewsap={AllNewsap}
             setSelectedNews={setSelectedNews}
+            onscrollToTop={scrollToTop}
           />
         ) : (
           page === "صفحه اصلی" && (
@@ -141,6 +157,7 @@ function App() {
                 setNews={setNews}
                 setSelectedNews={setSelectedNews}
                 AllNewsap={AllNewsap}
+                onscrollToTop={scrollToTop}
               />
             </>
           )
@@ -167,7 +184,9 @@ function App() {
       )}
       {page === "نمایندگی‌ها" && <Representation />}
       {page === "درباره‌ما" && <AboutUs />}
-      {page === "فروش" && <Forms />}
+      {page === "فروش" && (
+        <Forms selectedForm={selectedForm} setSelectedForm={setSelectedForm} />
+      )}
       {page === "تماس با ما" && <ContactUs />}
       <Footer />
     </div>

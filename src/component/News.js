@@ -1,8 +1,14 @@
 import CardItem from "./CardItem";
 
-export default function News({ setNews, setSelectedNews, AllNewsap }) {
+export default function News({
+  setNews,
+  setSelectedNews,
+  AllNewsap,
+  onscrollToTop,
+}) {
   function setSelected(id) {
     setSelectedNews(id);
+    onscrollToTop();
   }
   return (
     <section className="News">

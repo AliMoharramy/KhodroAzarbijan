@@ -1,8 +1,14 @@
 import CardItem from "./CardItem";
 
-export default function AllNews({ setNews, AllNewsap, setSelectedNews }) {
+export default function AllNews({
+  setNews,
+  AllNewsap,
+  setSelectedNews,
+  onscrollToTop,
+}) {
   function setSelected(id) {
     setSelectedNews(id);
+    onscrollToTop();
   }
   window.onscroll = function (ev) {
     const headerPart = document.getElementsByClassName("header_contaner");
@@ -18,10 +24,10 @@ export default function AllNews({ setNews, AllNewsap, setSelectedNews }) {
   return (
     <section className="allNews">
       <div className="container">
-        <i
-          class="fa fa-chevron-circle-left productBackbtn"
-          onClick={() => setNews(0)}
-        ></i>
+        <div className="productBackbtn" onClick={() => setNews(0)}>
+          <i class="fa fa-chevron-left"></i>
+          بازگشت
+        </div>
         <div className="allNews-container">
           {Array.from({ length: AllNewsap.length }, (_, i) => {
             return (

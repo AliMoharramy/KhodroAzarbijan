@@ -1,4 +1,4 @@
-export default function Header({ page, onselectPage }) {
+export default function Header({ page, onselectPage, setIsPopup }) {
   const navItems = [
     "تماس با ما",
     "نمایندگی‌ها",
@@ -19,6 +19,12 @@ export default function Header({ page, onselectPage }) {
           <div className="language">
             <p className="persian">فارسی</p>
             <p className="english">english</p>
+          </div>
+          <div className="headerBar">
+            <a href={`04135475935`}>
+              <i class="fa fa-phone"></i>
+            </a>
+            <i class="fa fa-bars" onClick={(e) => setIsPopup(true)}></i>
           </div>
         </div>
         <div className="navbar">

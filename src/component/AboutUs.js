@@ -48,6 +48,7 @@ export default function AboutUs() {
           <img
             src="https://amicoir.com/images/1401/06/10/800px-____1.jpg"
             alt=""
+            className="about_secendImg"
           />
           <p>
             آمیکو علاوه بر دریافت علامت استاندارد ایران و ثبت آن بر روی تمامی
