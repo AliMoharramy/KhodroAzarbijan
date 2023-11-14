@@ -21,7 +21,7 @@ export default function Header({ page, onselectPage, setIsPopup }) {
             <p className="english">english</p>
           </div>
           <div className="headerBar">
-            <a href={`04135475935`}>
+            <a href="tel:04134245954">
               <i class="fa fa-phone"></i>
             </a>
             <i class="fa fa-bars" onClick={(e) => setIsPopup(true)}></i>

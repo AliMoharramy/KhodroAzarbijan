@@ -1,5 +1,6 @@
 import ProductSurveyForm from "./ProductSurveyForm";
 import SalesForm from "./SalesForm";
+import TireComplaint from "./TireComplaint";
 import TireSurveyForm from "./TireSurveyForm";
 
 export default function Forms({ setSelectedForm, selectedForm }) {
@@ -18,6 +19,8 @@ export default function Forms({ setSelectedForm, selectedForm }) {
           {selectedForm === "فروش" && <SalesForm />}
           {selectedForm === "نظرسنجی تایر" && <TireSurveyForm />}
           {selectedForm === "نظرسنجی محصول" && <ProductSurveyForm />}
+          {selectedForm === "ثبت شکایت تایر" && <TireComplaint />}
+          {selectedForm === "ثبت شکایت محصول" && <TireComplaint />}
         </div>
         <div className="forms-right">
           <ul>

@@ -22,10 +22,10 @@ export default function ProductPage({ item, setSelectedProduct }) {
   return (
     <section className="product-page">
       <div className="container">
-        <i
-          class="fa fa-chevron-circle-left productBackbtn"
-          onClick={() => setSelectedProduct(0)}
-        ></i>
+        <div className="productBackbtn" onClick={() => setSelectedProduct(0)}>
+          <i class="fa fa-chevron-left"></i>
+          بازگشت
+        </div>
         <div className="info">
           <div className="product-page__top">
             <div className="product-img">
