@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="footer__logo">
             <div className="logo">
               <a href=".Footer">
-                <img src={require("../media/Group 3.png")} alt="" />
+                <img src={require("../media/logo.png")} alt="" />
               </a>
             </div>
           </div>

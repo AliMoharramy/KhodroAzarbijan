@@ -1,4 +1,10 @@
-export default function Header({ page, onselectPage, setIsPopup }) {
+export default function Header({
+  page,
+  onselectPage,
+  setIsPopup,
+  setIsEnglish,
+  isEnglish,
+}) {
   const navItems = [
     "تماس با ما",
     "نمایندگی‌ها",
@@ -13,12 +19,14 @@ export default function Header({ page, onselectPage, setIsPopup }) {
         <div className="right-nav">
           <div className="logo">
             <a href="Header">
-              <img src={require("../media/Group 3.png")} alt="" />
+              <img src={require("../media/logo.png")} alt="Logo" />
             </a>
           </div>
-          <div className="language">
-            <p className="persian">فارسی</p>
-            <p className="english">english</p>
+          <div
+            className="language"
+            onClick={(e) => setIsEnglish(isEnglish ? false : true)}
+          >
+            <p className="persian">{isEnglish ? "فارسی" : "english"}</p>
           </div>
           <div className="headerBar">
             <a href="tel:04134245954">

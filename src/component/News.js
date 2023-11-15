@@ -28,7 +28,10 @@ export default function News({
               <CardItem
                 id={AllNewsap[i].id}
                 title={AllNewsap[i].title}
-                image={AllNewsap[i].image}
+                image={
+                  AllNewsap[i].image ||
+                  require("../media/istockphoto-1324356458-612x612-1.jpg")
+                }
                 onsetSelected={setSelected}
               />
             );

@@ -24,11 +24,24 @@ export default function NewsPage({ setSelectedNews, Newsap, AllNewsap }) {
 
         <div className="news-container">
           <div className="newsInfo">
-            <img src={Newsap.image} alt="" />
+            {Newsap.video ? (
+              <video src={require("../media/videoStart.mp4")} controls></video>
+            ) : (
+              <img src={Newsap.image} alt="" />
+            )}
             <div className="newsInfo-details">
               <h3>{Newsap.title}</h3>
               <p>{Newsap.text}</p>
             </div>
+            {Newsap.albume && (
+              <div className="newsImages">
+                <div className="news_images-container">
+                  {Array.from({ length: Newsap.albume.length }, (_, i) => {
+                    return <img src={Newsap.albume[i]} alt="img" />;
+                  })}
+                </div>
+              </div>
+            )}
           </div>
           <div className="anotherNews">
             {Array.from({ length: 3 }, (_, i) => {
