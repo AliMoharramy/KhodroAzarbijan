@@ -3,11 +3,11 @@ export default function ContactUs() {
     const headerPart = document.getElementsByClassName("header_contaner");
     const sliderPart = document.getElementsByClassName("contact-us");
     if (window.scrollY >= 160) {
-      //headerPart[0].classList.add("fixed-header");
-      //sliderPart[0].classList.add("after-scrolled");
+      headerPart[0].classList.add("fixed-header");
+      sliderPart[0].classList.add("after-scrolled");
     } else {
-      //headerPart[0].classList.remove("fixed-header");
-      //sliderPart[0].classList.remove("after-scrolled");
+      headerPart[0].classList.remove("fixed-header");
+      sliderPart[0].classList.remove("after-scrolled");
     }
   };
   return (
@@ -15,18 +15,15 @@ export default function ContactUs() {
       <div className="contact-us_container">
         <div className="contact-us_info">
           <div className="contact-address">
-            <h3>آدرس</h3>
-            <p>
-              کیلومتر۱۳ بزرگراه شهید لشگری(جاده مخصوص کرج)، ستاد ،سازمان فروش،
-              مرکز خدمات پس از فروش و تعمیرگاه مرکزی گروه بهمن{" "}
-            </p>
-            <p>کد پستی: ۳۹۷۱۱ -۱۳۹۹۹</p>
+            <h3> : آدرس کارخانه</h3>
+            <p>تبریز بلوار ملت شرکت خودروسازان دیزلی آذربایجان</p>
+            <p>دورنگار : 34260100 -041</p>
           </div>
           <div className="contact-ways">
-            <h3>راههای ارتباطی </h3>
-            <p>مرکز تماس :۴۸۰۲۷-۰۲۱</p>
-            <p>ایمیل : info@bahman.ir</p>
-            <p>شماره واتس اپ خدمات پس از فروش: ۹۸۹۹۴۱۶۷۲۶۲۰+</p>
+            <h3> : راههای ارتباطی</h3>
+            <p>دفتر مرکزی :34246088- 041</p>
+            <p>امور مشتریان :34260426- 041</p>
+            <p>ایمیل : Mail@advmco.ir</p>
           </div>
         </div>
         <a href="https://maps.app.goo.gl/31rmZfLtBrrdM5YH8">

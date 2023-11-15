@@ -560,6 +560,14 @@ li {
   grid-column: 1/5;
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem;
+}
+.product-img img {
+  width: 80%;
+}
+
+.productpageinfo {
+  text-align: right;
 }
 
 .product-dis {
@@ -1267,6 +1275,9 @@ li {
   }
   .album-container {
     margin: 0.5rem;
+  }
+  .news_images-container {
+    grid-template-columns: 1fr;
   }
 }
 @media only screen and (max-width: 335px) {

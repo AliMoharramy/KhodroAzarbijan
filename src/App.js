@@ -16,13 +16,12 @@ import PopupNav from "./component/PopupNav";
 const products = [
   {
     id: 1,
-    title: "کامیون فورس ۸.۵ تن کابین خوابدار",
+    title: "کامیون باری 11 تن",
     haveVideo: false,
-    image:
-      "https://panel.bahman.ir/api/file_manager/dn/86795e49-4cec-4d33-bd31-a0610355ed8b",
+    image: "https://thumbs2.imgbox.com/d3/ec/d7Q43pA5_t.png",
     place: "محصول",
     album: [
-      "https://panel.bahman.ir/api/file_manager/dn/5094b89c-50eb-411b-bdc1-b9484909b802",
+      "https://thumbs2.imgbox.com/ac/b4/57Xbu1DG_t.jpg",
       "https://panel.bahman.ir/api/file_manager/dn/87b477fd-90ff-423d-8983-20c35c0f3122",
       "https://panel.bahman.ir/api/file_manager/dn/16c2d2e1-1c16-4ef3-abfd-eaabd5612490",
     ],
@@ -31,8 +30,7 @@ const products = [
     id: 2,
     title: " کشنده BAIC X9 ",
     haveVideo: false,
-    image:
-      "https://panel.bahman.ir/api/file_manager/dn/d17bd00e-9d68-4f01-8fdd-0ecfd7a63b10",
+    image: "https://thumbs2.imgbox.com/ac/b4/57Xbu1DG_t.jpg",
     place: "محصول",
     album: [
       "https://panel.bahman.ir/api/file_manager/dn/44b2e6d6-4b65-4555-ae09-3d53ce87b528",
