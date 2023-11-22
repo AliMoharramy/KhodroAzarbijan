@@ -1,109 +1,39 @@
-export default function Representation() {
+import RepperInfo from "./JsonFiles/RepperInfo.json";
+export default function Representation({ isEnglish }) {
   return (
     <section className="represent">
       <div className="container">
-        <div className="rep__carts">
-          <div className="repCart">
-            <div className="rep__title">
-              <p>1055</p>
-              <p>آرمان صنعت آکام ايرانيان</p>
-            </div>
-            <div className="rep__info">
-              <p>
-                آدرس : کرج- ابتداي کمالشهر - مقابل خيابان پيشاهنگي کدپستي
-                3199785573{" "}
-              </p>
-              <p>
-                {" "}
-                شنبه تا چهارشنبه 8 الي 17 پنج شنبه 8 الي 12 ظهر خودروهاي قابل
-                پذيرش:1929-2631-2640-M4.5-M5.2-M6-پيکاپ
-              </p>
-            </div>
-            <div className="rep__phone">
-              <i class="fa fa-location-arrow"></i>
-              <p>تلفن : 34801020 - 026 </p>
-            </div>
-          </div>
-          <div className="repCart">
-            <div className="rep__title">
-              <p>1055</p>
-              <p>آرمان صنعت آکام ايرانيان</p>
-            </div>
-            <div className="rep__info">
-              <p>
-                آدرس : کرج- ابتداي کمالشهر - مقابل خيابان پيشاهنگي کدپستي
-                3199785573
-              </p>
-              <p>
-                شنبه تا چهارشنبه 8 الي 17 پنج شنبه 8 الي 12 ظهر خودروهاي قابل
-                پذيرش:1929-2631-2640-M4.5-M5.2-M6-پيکاپ
-              </p>
-            </div>
-            <div className="rep__phone">
-              <i class="fa fa-location-arrow"></i>
-              <p>تلفن : 34801020 - 026 </p>
-            </div>
-          </div>
-          <div className="repCart">
-            <div className="rep__title">
-              <p>1055</p>
-              <p>آرمان صنعت آکام ايرانيان</p>
-            </div>
-            <div className="rep__info">
-              <p>
-                آدرس : کرج- ابتداي کمالشهر - مقابل خيابان پيشاهنگي کدپستي
-                3199785573
-              </p>
-              <p>
-                شنبه تا چهارشنبه 8 الي 17 پنج شنبه 8 الي 12 ظهر خودروهاي قابل
-                پذيرش:1929-2631-2640-M4.5-M5.2-M6-پيکاپ
-              </p>
-            </div>
-            <div className="rep__phone">
-              <i class="fa fa-location-arrow"></i>
-              <p>تلفن : 34801020 - 026 </p>
-            </div>
-          </div>
-          <div className="repCart">
-            <div className="rep__title">
-              <p>1055</p>
-              <p>آرمان صنعت آکام ايرانيان</p>
-            </div>
-            <div className="rep__info">
-              <p>
-                آدرس : کرج- ابتداي کمالشهر - مقابل خيابان پيشاهنگي کدپستي
-                3199785573
-              </p>
-              <p>
-                شنبه تا چهارشنبه 8 الي 17 پنج شنبه 8 الي 12 ظهر خودروهاي قابل
-                پذيرش:1929-2631-2640-M4.5-M5.2-M6-پيکاپ
-              </p>
-            </div>
-            <div className="rep__phone">
-              <i class="fa fa-location-arrow"></i>
-              <p>تلفن : 34801020 - 026 </p>
-            </div>
-          </div>
-          <div className="repCart">
-            <div className="rep__title">
-              <p>1055</p>
-              <p>آرمان صنعت آکام ايرانيان</p>
-            </div>
-            <div className="rep__info">
-              <p>
-                آدرس : کرج- ابتداي کمالشهر - مقابل خيابان پيشاهنگي کدپستي
-                3199785573
-              </p>
-              <p>
-                شنبه تا چهارشنبه 8 الي 17 پنج شنبه 8 الي 12 ظهر خودروهاي قابل
-                پذيرش:1929-2631-2640-M4.5-M5.2-M6-پيکاپ
-              </p>
-            </div>
-            <div className="rep__phone">
-              <i class="fa fa-location-arrow"></i>
-              <p>تلفن : 34801020 - 026 </p>
-            </div>
-          </div>
+        <div className="rep-container">
+          {Array.from({ length: RepperInfo.repPerInfo.length }, (_, i) => {
+            return (
+              <div className="rep__carts">
+                <div className="repCart">
+                  <div className="rep__title">
+                    <p>{RepperInfo.repPerInfo[i].code}</p>
+                    <p>
+                      {RepperInfo.repPerInfo[i].name}{" "}
+                      <span>{RepperInfo.repPerInfo[i].lastName}</span>
+                    </p>
+                  </div>
+                  <div className="rep__info">
+                    <h5>
+                      {isEnglish
+                        ? RepperInfo.repPerInfo[i].cityEn
+                        : RepperInfo.repPerInfo[i].city}
+                    </h5>
+                    <p>{RepperInfo.repPerInfo[i].address}</p>
+                  </div>
+                  <div className="rep__phone">
+                    <i class="fa fa-location-arrow"></i>
+                    <p>
+                      {isEnglish ? "Phone" : "تلفن "}:{" "}
+                      {RepperInfo.repPerInfo[i].phone}{" "}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

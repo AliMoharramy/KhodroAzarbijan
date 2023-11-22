@@ -1,6 +1,6 @@
 import CardItem from "./CardItem";
 
-export default function Products({ products, setSelectedProduct }) {
+export default function Products({ products, setSelectedProduct, isEnglish }) {
   function setSelected(id) {
     setSelectedProduct(id);
   }
@@ -8,7 +8,7 @@ export default function Products({ products, setSelectedProduct }) {
     <section className="Products">
       <div className="container">
         <div className="products__title">
-          <h3>محصولات</h3>
+          <h3>{isEnglish ? "Products" : "محصولات"}</h3>
         </div>
         <div className="products__items">
           {Array.from({ length: products.length }, (_, i) => {
@@ -16,13 +16,15 @@ export default function Products({ products, setSelectedProduct }) {
               <CardItem
                 id={products[i].id}
                 title={products[i].title}
+                titleEn={products[i].titleEn}
                 image={products[i].image}
                 place={products[i].place}
+                placeEn={products[i].placeEn}
                 onsetSelected={setSelected}
+                isEnglish={isEnglish}
               />
             );
           })}
-          <CardItem place="محصول" />
         </div>
       </div>
     </section>

@@ -1,32 +1,27 @@
+import HeaderContent from "./JsonFiles/HeaderContent.json";
 export default function Header({
   page,
   onselectPage,
   setIsPopup,
   setIsEnglish,
   isEnglish,
+  setIsLoading,
 }) {
-  const navItems = [
-    "تماس با ما",
-    "نمایندگی‌ها",
-    "فروش",
-    "محصولات",
-    "درباره‌ما",
-    "صفحه اصلی",
-  ];
+  function changeLangWithLoad() {
+    setIsLoading(true);
+    setIsEnglish(isEnglish ? false : true);
+  }
   return (
     <header>
       <div className="header_contaner">
         <div className="right-nav">
           <div className="logo">
-            <a href="Header">
+            <a href="#">
               <img src={require("../media/logo.png")} alt="Logo" />
             </a>
           </div>
-          <div
-            className="language"
-            onClick={(e) => setIsEnglish(isEnglish ? false : true)}
-          >
-            <p className="persian">{isEnglish ? "فارسی" : "english"}</p>
+          <div className="language" onClick={(e) => changeLangWithLoad()}>
+            <p className="persian">{isEnglish ? "فا" : "En"}</p>
           </div>
           <div className="headerBar">
             <a href="tel:04134245954">
@@ -37,14 +32,17 @@ export default function Header({
         </div>
         <div className="navbar">
           <ul>
-            {Array.from({ length: navItems.length }, (_, i) => {
+            {Array.from({ length: HeaderContent.navItems.length }, (_, i) => {
+              //let setsitems = HeaderContent.navItems.length - i;
               return (
                 <li
                   key={i}
-                  onClick={(e) => onselectPage(e.target.innerText)}
-                  className={page === navItems[i] && "activebtn"}
+                  onClick={(e) => onselectPage(HeaderContent.navItems[i])}
+                  className={page === HeaderContent.navItems[i] && "activebtn"}
                 >
-                  {navItems[i]}
+                  {isEnglish
+                    ? HeaderContent.navItemsEn[i]
+                    : HeaderContent.navItems[i]}
                 </li>
               );
             })}

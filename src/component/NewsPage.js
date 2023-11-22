@@ -1,5 +1,11 @@
 import CardItem from "./CardItem";
-export default function NewsPage({ setSelectedNews, Newsap, AllNewsap }) {
+export default function NewsPage({
+  setSelectedNews,
+  Newsap,
+  AllNewsap,
+  isEnglish,
+  setIsPopUpImg,
+}) {
   function setSelected(id) {
     setSelectedNews(id);
   }
@@ -19,25 +25,37 @@ export default function NewsPage({ setSelectedNews, Newsap, AllNewsap }) {
       <div className="container">
         <div className="productBackbtn" onClick={() => setSelected(0)}>
           <i class="fa fa-chevron-left"></i>
-          بازگشت
+          {isEnglish ? "Back" : "بازگشت"}
         </div>
 
         <div className="news-container">
           <div className="newsInfo">
             {Newsap.video ? (
-              <video src={require("../media/videoStart.mp4")} controls></video>
+              <video
+                src={require("../media/videoStart.mp4")}
+                poster={Newsap.image}
+                controls
+              ></video>
             ) : (
               <img src={Newsap.image} alt="" />
             )}
             <div className="newsInfo-details">
-              <h3>{Newsap.title}</h3>
-              <p>{Newsap.text}</p>
+              <h3>{isEnglish ? Newsap.titleEn : Newsap.title}</h3>
+              <p>{isEnglish ? Newsap.textEn : Newsap.text}</p>
             </div>
             {Newsap.albume && (
               <div className="newsImages">
                 <div className="news_images-container">
                   {Array.from({ length: Newsap.albume.length }, (_, i) => {
-                    return <img src={Newsap.albume[i]} alt="img" />;
+                    return (
+                      <div>
+                        <img
+                          src={Newsap.albume[i]}
+                          alt="img"
+                          onClick={(e) => setIsPopUpImg([e.target.src, true])}
+                        />
+                      </div>
+                    );
                   })}
                 </div>
               </div>
@@ -49,8 +67,12 @@ export default function NewsPage({ setSelectedNews, Newsap, AllNewsap }) {
                 <CardItem
                   id={AllNewsap[i].id}
                   title={AllNewsap[i].title}
+                  titleEn={AllNewsap[i].titleEn}
                   image={AllNewsap[i].image}
+                  place={AllNewsap[i].place}
+                  placeEn={AllNewsap[i].placeEn}
                   onsetSelected={setSelected}
+                  isEnglish={isEnglish}
                 />
               );
             })}

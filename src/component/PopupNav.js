@@ -1,24 +1,25 @@
-export default function PopupNav({ page, onselectPage, setIsPopup }) {
-  const navItems = [
-    "صفحه اصلی",
-    "درباره‌ما",
-    "محصولات",
-    "فروش",
-    "نمایندگی‌ها",
-    "تماس با ما",
-  ];
+import HeaderContent from "./JsonFiles/HeaderContent.json";
+
+export default function PopupNav({
+  page,
+  onselectPage,
+  setIsPopup,
+  isEnglish,
+}) {
   return (
     <div className="popupnav">
       <i class="fa fa-close" onClick={(e) => setIsPopup(false)}></i>
       <ul>
-        {Array.from({ length: navItems.length }, (_, i) => {
+        {Array.from({ length: HeaderContent.navItems.length }, (_, i) => {
           return (
             <li
               key={i}
-              onClick={(e) => onselectPage(e.target.innerText)}
-              className={page === navItems[i] && "activebtn"}
+              onClick={(e) => onselectPage(HeaderContent.navItems[i])}
+              className={page === HeaderContent.navItems[i] && "activebtn"}
             >
-              {navItems[i]}
+              {isEnglish
+                ? HeaderContent.navItemsEn[i]
+                : HeaderContent.navItems[i]}
             </li>
           );
         })}

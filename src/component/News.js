@@ -5,6 +5,7 @@ export default function News({
   setSelectedNews,
   AllNewsap,
   onscrollToTop,
+  isEnglish,
 }) {
   function setSelected(id) {
     setSelectedNews(id);
@@ -15,24 +16,30 @@ export default function News({
       <div className="container">
         <div className="news__title">
           <button onClick={(e) => setNews(true)}>
-            مشاهده همه اخبار<i class="fa fa-newspaper-o"></i>
+            {isEnglish ? "View all news" : "مشاهده همه اخبار"}
+            <i class="fa fa-newspaper-o"></i>
           </button>
           <div>
-            <p>آخرین اخبار</p>
+            <p>{isEnglish ? "Latest News" : "آخرین اخبار"}</p>
             <i class="fa fa-pencil-square-o"></i>
           </div>
         </div>
         <div className="news__cards">
           {Array.from({ length: 3 }, (_, i) => {
+            let rst = 3 - i;
             return (
               <CardItem
-                id={AllNewsap[i].id}
-                title={AllNewsap[i].title}
+                id={AllNewsap[rst].id}
+                title={AllNewsap[rst].title}
+                titleEn={AllNewsap[rst].titleEn}
+                place={AllNewsap[rst].place}
+                placeEn={AllNewsap[rst].placeEn}
                 image={
-                  AllNewsap[i].image ||
+                  AllNewsap[rst].image ||
                   require("../media/istockphoto-1324356458-612x612-1.jpg")
                 }
                 onsetSelected={setSelected}
+                isEnglish={isEnglish}
               />
             );
           })}

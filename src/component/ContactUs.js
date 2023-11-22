@@ -1,4 +1,4 @@
-export default function ContactUs() {
+export default function ContactUs({ isEnglish }) {
   window.onscroll = function (ev) {
     const headerPart = document.getElementsByClassName("header_contaner");
     const sliderPart = document.getElementsByClassName("contact-us");
@@ -15,12 +15,19 @@ export default function ContactUs() {
       <div className="contact-us_container">
         <div className="contact-us_info">
           <div className="contact-address">
-            <h3> : آدرس کارخانه</h3>
-            <p>تبریز بلوار ملت شرکت خودروسازان دیزلی آذربایجان</p>
+            <h3>{isEnglish ? "factory address : " : ": آدرس کارخانه"}</h3>
+            <p>
+              {isEnglish
+                ? "Tabriz, Mellat Blvd., Azerbaijan Diesel Automobile Company"
+                : "تبریز بلوار ملت شرکت خودروسازان دیزلی آذربایجان"}
+            </p>
             <p>دورنگار : 34260100 -041</p>
           </div>
           <div className="contact-ways">
-            <h3> : راههای ارتباطی</h3>
+            <h3>
+              {" "}
+              {isEnglish ? "Ways of communication :" : ": راههای ارتباطی"}
+            </h3>
             <p>دفتر مرکزی :34246088- 041</p>
             <p>امور مشتریان :34260426- 041</p>
             <p>ایمیل : Mail@advmco.ir</p>

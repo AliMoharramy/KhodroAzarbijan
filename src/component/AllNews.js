@@ -5,6 +5,7 @@ export default function AllNews({
   AllNewsap,
   setSelectedNews,
   onscrollToTop,
+  isEnglish,
 }) {
   function setSelected(id) {
     setSelectedNews(id);
@@ -26,7 +27,7 @@ export default function AllNews({
       <div className="container">
         <div className="productBackbtn" onClick={() => setNews(0)}>
           <i class="fa fa-chevron-left"></i>
-          بازگشت
+          {isEnglish ? "Back" : "بازگشت"}
         </div>
         <div className="allNews-container">
           {Array.from({ length: AllNewsap.length }, (_, i) => {
@@ -34,10 +35,14 @@ export default function AllNews({
               <CardItem
                 id={AllNewsap[i].id}
                 title={AllNewsap[i].title}
+                titleEn={AllNewsap[i].titleEn}
                 image={
                   AllNewsap[i].image ||
                   require("../media/istockphoto-1324356458-612x612-1.jpg")
                 }
+                place={AllNewsap[i].place}
+                placeEn={AllNewsap[i].placeEn}
+                isEnglish={isEnglish}
                 onsetSelected={setSelected}
               />
             );

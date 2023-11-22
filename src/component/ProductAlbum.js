@@ -1,10 +1,18 @@
-export default function ProductAlbum({ album = [""] }) {
-  console.log(album);
+export default function ProductAlbum({ albume = [""], setIsPopUpImg }) {
   return (
     <div className="product-album">
       <div className="album-container">
-        {Array.from({ length: album.length }, (_, i) => {
-          return <img src={album[i]} className={`album-img${i + 1}`} alt="" />;
+        {Array.from({ length: albume.length }, (_, i) => {
+          return (
+            <div>
+              <img
+                src={albume[i]}
+                className={`album-img${i + 1}`}
+                alt=""
+                onClick={(e) => setIsPopUpImg([e.target.src, true])}
+              />
+            </div>
+          );
         })}
       </div>
     </div>

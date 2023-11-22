@@ -3,7 +3,10 @@ export default function CardItem({
   onsetSelected,
   title = "No Title !",
   image = "https://wkdonlinedogtraining.com/wp-content/themes/wkd-wp/build/images/bg-no-img-big.jpg",
-  place = "خبر",
+  place,
+  placeEn,
+  isEnglish,
+  titleEn,
 }) {
   return (
     <div
@@ -12,10 +15,10 @@ export default function CardItem({
     >
       <img src={image} alt="" />
       <div className="news__info">
-        <h5>{title}</h5>
+        <h5>{isEnglish ? titleEn : title}</h5>
       </div>
       <button>
-        مشاهده {place}
+        {isEnglish ? `See the ${placeEn}` : `مشاهده ${place}`}
         {place === "خبر" && <i className="fa fa-link"></i>}
       </button>
     </div>

@@ -9,7 +9,11 @@ export default function Slider() {
         />
         <div className="slideShow">
           <div className="slider container">
-            <div id="carouselExampleIndicators" class="carousel slide">
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide "
+              data-bs-ride="carousel"
+            >
               <div class="carousel-indicators">
                 <button
                   type="button"
@@ -35,21 +39,21 @@ export default function Slider() {
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <img
-                    src="https://old.bahman.ir/uploads/portal_slider/J6%20(3).jpg"
+                    src="http://yuejinmotor.net/images/s2.jpg"
                     class="d-block w-100"
                     alt="pic1"
                   />
                 </div>
                 <div class="carousel-item">
                   <img
-                    src="https://old.bahman.ir/uploads/portal_slider/SM(1).jpg"
+                    src="http://yuejinmotor.net/images/s1.jpg"
                     class="d-block w-100"
                     alt="pic2"
                   />
                 </div>
                 <div class="carousel-item">
                   <img
-                    src="https://old.bahman.ir/uploads/portal_slider/J6%20(1).jpg"
+                    src="http://yuejinmotor.net/images/s0.jpg"
                     class="d-block w-100"
                     alt="pic3"
                   />

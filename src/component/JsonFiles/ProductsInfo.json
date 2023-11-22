@@ -1,0 +1,79 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "YUEJIN C500",
+      "titleEn": "YUEJIN C500",
+      "haveVideo": false,
+      "image": "https://s6.uupload.ir/files/dsc_0333_1z9u.jpg",
+      "place": "محصول",
+      "placeEn": "product",
+      "albume": [
+        "https://s6.uupload.ir/files/photo_2017-10-31_15-39-34_cg29.jpg",
+        "https://s6.uupload.ir/files/img_0743_llhw.jpg",
+        "https://s6.uupload.ir/files/c50021_pirq.jpg",
+        "https://s6.uupload.ir/files/picture-c500-2_3uy7.jpg"
+      ],
+      "powers": [
+        "موتور نام آشنا و قدرتمند cummins از سری ISF3.8",
+        "گیربکس 6 سرعته با قابلیت نصب PTO",
+        "وزن ناخالص اسمی 11 تن و حمل بار تا 6 تن",
+        "فضای بارگیری جادار و مناسب برای نصب انواع کاربری",
+        "سیستم ترمز بادی با ایمنی بالا و عملکرد مطلوب مجهزبه ABS - EBD",
+        "مجهز به فناوری های پیشرفته و حایز استانداردهای اروپایی"
+      ],
+      "powersEn": [
+        "The well-known and powerful cummins engine of the ISF3.8 series",
+        "6-speed gearbox with the ability to install PTO",
+        "Nominal gross weight of 11 tons and load up to 6 tons",
+        "Spacious loading space suitable for installing all kinds of applications",
+        "Air brake system with high safety and optimal performance equipped with ABS - EBD",
+        "Equipped with advanced technologies and meeting European standards"
+      ],
+      "table": [
+        { "name": "سیستم", "nameEn": "Model", "value": "YUEJIN" },
+        { "name": "تیپ", "nameEn": "Type", "value": "C500-47D10" },
+        {
+          "name": "تیپ کابین",
+          "nameEn": "CAB Type",
+          "value": "King Size - Tilt"
+        },
+        { "name": "تعداد صندل", "nameEn": "No. of seats", "value": "3" },
+        { "name": "طول", "nameEn": "Length", "value": "8500 mm" },
+        { "name": "عرض", "nameEn": "Width", "value": "2385 mm" },
+        { "name": "ارتفاع", "nameEn": "Height", "value": "2570 mm" },
+        { "name": "فاصله محورها", "nameEn": "Wheelbase", "value": "4750 mm" },
+        {
+          "name": "وزن ناخالص",
+          "nameEn": "Gross vehicle weight",
+          "value": "11000 kg"
+        },
+        {
+          "name": "مدل موتور",
+          "nameEn": "ENGINE Model",
+          "value": "Cummins ISF3.8s5168"
+        },
+        {
+          "name": "نوع موتور",
+          "nameEn": "ENGINE Type",
+          "value": "Diesel, 4-cylender, in line, water-cooled"
+        },
+        {
+          "name": "حداکثر قدرت",
+          "nameEn": "Max. Power",
+          "value": "122 kW @ 2600 rpm"
+        },
+        {
+          "name": "حداکثر گشتاور",
+          "nameEn": "Max. Torque",
+          "value": "600 N.m @ 1300-1700 rpm"
+        },
+        {
+          "name": "استاندار آلایندگی ",
+          "nameEn": "Emission level",
+          "value": "EuroV"
+        }
+      ]
+    }
+  ]
+}
