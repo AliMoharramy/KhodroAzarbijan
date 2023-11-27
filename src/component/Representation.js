@@ -8,12 +8,19 @@ export default function Representation({ isEnglish }) {
             return (
               <div className="rep__carts">
                 <div className="repCart">
+                  <div className="rep__phone">
+                    <i class="fa fa-location-arrow"></i>
+                    <p>
+                      {isEnglish ? "Phone" : "تلفن "}:{" "}
+                      {RepperInfo.repPerInfo[i].phone}{" "}
+                    </p>
+                  </div>
                   <div className="rep__title">
-                    <p>{RepperInfo.repPerInfo[i].code}</p>
                     <p>
                       {RepperInfo.repPerInfo[i].name}{" "}
                       <span>{RepperInfo.repPerInfo[i].lastName}</span>
                     </p>
+                    <p> - {RepperInfo.repPerInfo[i].code}</p>
                   </div>
                   <div className="rep__info">
                     <h5>
@@ -22,13 +29,6 @@ export default function Representation({ isEnglish }) {
                         : RepperInfo.repPerInfo[i].city}
                     </h5>
                     <p>{RepperInfo.repPerInfo[i].address}</p>
-                  </div>
-                  <div className="rep__phone">
-                    <i class="fa fa-location-arrow"></i>
-                    <p>
-                      {isEnglish ? "Phone" : "تلفن "}:{" "}
-                      {RepperInfo.repPerInfo[i].phone}{" "}
-                    </p>
                   </div>
                 </div>
               </div>

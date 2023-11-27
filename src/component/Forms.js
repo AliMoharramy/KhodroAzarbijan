@@ -33,14 +33,16 @@ export default function Forms({ setSelectedForm, selectedForm, isEnglish }) {
           <ul>
             {Array.from({ length: SelectForms.length }, (_, i) => {
               return (
-                <li
-                  className={
-                    selectedForm === SelectForms[i] && "form-activeBtn"
-                  }
-                  onClick={(e) => setSelectedForm(SelectForms[i])}
-                >
-                  {isEnglish ? SelectFormsEn[i] : SelectForms[i]}
-                </li>
+                <a href="">
+                  <li
+                    className={
+                      selectedForm === SelectForms[i] && "form-activeBtn"
+                    }
+                    onClick={(e) => setSelectedForm(SelectForms[i])}
+                  >
+                    {isEnglish ? SelectFormsEn[i] : SelectForms[i]}
+                  </li>
+                </a>
               );
             })}
           </ul>

@@ -15,6 +15,7 @@ import PopupNav from "./component/PopupNav";
 import PopupImg from "./component/PopupImg";
 import ProductsInfo from "./component/JsonFiles/ProductsInfo.json";
 import Loading from "./component/Loading";
+import TopBanner from "./component/TopBanner";
 
 const AllNewsap = [
   {
@@ -187,6 +188,21 @@ function App() {
     }, 3000);
   }, [isLoading]);
 
+  // if (localStorage.getItem("page") !== null) {
+  //   setPage(localStorage.getItem("page"));
+  // }
+  useEffect(() => {
+    if (localStorage.getItem("page") !== null) {
+      setPage(localStorage.getItem("page"));
+    }
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      localStorage.setItem("page", page);
+    }, 500);
+  }, [page]);
+
   function scrollToTop() {
     window.scrollTo(0, 0);
   }
@@ -226,6 +242,9 @@ function App() {
     }
     const headerPart = document.getElementsByClassName("header_contaner");
     const sliderPart = document.getElementsByClassName(selectedSection);
+    if (selectedSection === "Slides") {
+      sliderPart[0].classList.add("after-scrolled2");
+    }
     if (window.scrollY >= 160) {
       headerPart[0].classList.add("fixed-header");
       sliderPart[0].classList.add("after-scrolled");
@@ -249,6 +268,7 @@ function App() {
           isEnglish={isEnglish}
         />
       )}
+      {page === "صفحه اصلی" && <TopBanner />}
       <Header
         page={page}
         onselectPage={selectPage}

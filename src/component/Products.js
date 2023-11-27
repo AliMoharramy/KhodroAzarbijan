@@ -22,6 +22,7 @@ export default function Products({ products, setSelectedProduct, isEnglish }) {
                 placeEn={products[i].placeEn}
                 onsetSelected={setSelected}
                 isEnglish={isEnglish}
+                fromSer={products[i].fromSer}
               />
             );
           })}

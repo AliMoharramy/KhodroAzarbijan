@@ -7,13 +7,20 @@ export default function CardItem({
   placeEn,
   isEnglish,
   titleEn,
+  fromSer = false,
 }) {
   return (
     <div
       className={place === "خبر" ? "news__card news_cardBtn" : "news__card"}
       onClick={() => onsetSelected(id)}
     >
-      <img src={image} alt="" />
+      <div className="card__img-div">
+        {fromSer ? (
+          <img src={require("../media/dsc_0333_9z4y.jpg")} alt="" />
+        ) : (
+          <img src={image} alt="" />
+        )}
+      </div>
       <div className="news__info">
         <h5>{isEnglish ? titleEn : title}</h5>
       </div>

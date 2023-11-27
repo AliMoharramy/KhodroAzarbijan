@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
 $bg-color: #073059;
 @mixin GlassBg {
   background: rgba(0, 0, 0, 0.45);
@@ -36,33 +37,27 @@ li {
 .header_contaner {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 85%;
-  margin: auto;
 }
 .headerBar {
   display: none;
 }
 .right-nav {
+  display: none !important;
   display: flex;
   flex-direction: row;
   align-items: center;
-  @include GlassBg();
   margin: 1rem 0;
   padding: 0.5rem;
-  border-radius: 10px;
   color: #ffffff;
-  width: 45%;
   height: 4rem;
 }
 .language {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 3rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.3rem;
   font-size: 0.8rem;
-  padding: 0.2rem 0.5rem;
+  padding: 0rem 2.5rem;
+  margin: 0.5rem 1rem;
   border: 1px solid #ffffff;
   transition: 0.3s;
   cursor: pointer;
@@ -75,15 +70,43 @@ li {
     background-color: #ffffff3f;
   }
 }
+.header-top-part {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  justify-items: center;
+  padding: 1rem 0;
+  background-color: #eeeeee;
+
+  img {
+    width: 60%;
+  }
+}
+.header-top-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-column: 2/5;
+  align-items: center;
+  font-family: "Lalezar", sans-serif;
+  color: black;
+}
+.azarbaijanLogo {
+  a {
+    display: flex;
+    justify-content: right;
+  }
+}
 .english {
   color: #aeaeae;
 }
 .navbar {
-  justify-content: start;
+  justify-content: center;
   @include GlassBg();
-  margin: 1rem 0;
-  padding: 0.5rem;
-  border-radius: 10px;
+  border-radius: 0;
+  grid-column: 1/3;
+  margin-bottom: 1rem;
+  padding: 0.9rem 0.5rem;
   color: #ffffff;
   ul {
     display: flex;
@@ -187,7 +210,8 @@ li {
 // fixed header
 .fixed-header {
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
+  top: 0;
   width: 100%;
   @include GlassBg();
   border-radius: 0;
@@ -319,6 +343,15 @@ li {
     box-shadow: 0px 0px 50px -12px #27374d;
   }
 }
+.card__img-div {
+  overflow: hidden;
+  height: 13rem;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 .news_cardBtn {
   padding: 2rem 1.5rem;
   button {
@@ -341,7 +374,7 @@ li {
 .rep-container {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
 // footer
 .Footer {
@@ -436,17 +469,29 @@ li {
 .rep__title {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.265);
+  grid-column: 2/4;
+  justify-content: right;
   padding: 1rem 0;
+  p {
+    font-size: 1.3rem;
+  }
 }
 .repCart {
-  border: 1px solid black;
+  background-color: #e5e5e5e9;
+  border-radius: 5px;
   padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  transition: 0.3s;
+  border-right: 3px solid #0c356a;
+  &:hover {
+    box-shadow: 0px 10px 25px 5px rgba(0, 0, 0, 0.1);
+  }
 }
 .rep__phone {
   display: flex;
   flex-direction: row;
+  align-items: center;
   padding-left: 5rem;
   padding-right: 2rem;
   justify-content: space-between;
@@ -459,9 +504,8 @@ li {
   }
 }
 .rep__info {
-  margin: 2rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.265);
   padding: 1rem 0;
+  grid-column: 1/4;
 }
 // about section
 .about-us {
@@ -677,6 +721,9 @@ li {
   padding: 0 1rem;
 }
 // Form
+.enlastline {
+  text-align-last: right;
+}
 .Form {
   .container {
     padding: 5rem 0;
@@ -684,21 +731,36 @@ li {
 }
 .form-container {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
 .forms-right {
-  grid-column: 7/9;
+  display: grid;
   text-align: center;
+  ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    a:first-child {
+      grid-column: 1/3;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
   li {
-    padding: 2rem 0;
+    padding: 2.5rem 0;
     margin: 1rem 1rem;
-    background-color: #073059;
-    color: #ffffff;
+    border: 2px dotted black;
+    color: #fff;
+    font-weight: bold;
+    @include GlassBg();
+    background: #2e3f4f;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.2rem;
+    font-size: 1.5rem;
     &:hover {
-      background-color: #27374d;
+      background: rgba(70, 69, 69, 0.65);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.57);
     }
     transition: 0.3s;
   }
@@ -726,9 +788,6 @@ li {
       margin-bottom: 0.3rem;
     }
   }
-}
-.form-activeBtn {
-  border-radius: 20px !important;
 }
 .question {
   margin-top: 2rem;
@@ -883,8 +942,8 @@ li {
   .locate {
     position: absolute;
     width: 5%;
-    top: 15.3rem;
-    left: 33.1rem;
+    top: 11.8rem;
+    left: 34.1rem;
   }
   .contact-location {
     width: 100%;
@@ -1036,8 +1095,6 @@ li {
   }
 }
 .englishVersion {
-  p,
-  h5,
   h3,
   h2 {
     text-align: left;
@@ -1145,6 +1202,7 @@ li {
     border-radius: 0px;
   }
   .right-nav {
+    display: grid !important;
     margin: 0;
     width: 100%;
     border-radius: 0px;
@@ -1154,13 +1212,40 @@ li {
     box-shadow: none;
     border: none;
     backdrop-filter: none;
-
     a {
       color: #ffffff;
     }
   }
   .language {
     margin: 0;
+    padding: 0.5rem 0;
+    width: 70%;
+  }
+  .header-top-part {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    a {
+      width: 80%;
+    }
+  }
+  .azarbaijanLogo {
+    a {
+      justify-content: center;
+    }
+    grid-row: 2/2;
+    grid-column: 2/3;
+  }
+  .tractor-logo {
+    a {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .header-top-name {
+    margin: 1rem 0;
+  }
+  .header-top-name {
+    grid-column: 1/3;
   }
   .logo {
     margin: 0;
@@ -1313,22 +1398,22 @@ li {
     border: none;
   }
   .forms-right {
-    grid-column: 1/1;
-    grid-row: 1/1;
     margin-bottom: 2rem;
     ul {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
       padding: 0;
       width: 90%;
       margin: auto;
       gap: 0.5rem;
+      a:first-child {
+        grid-column: 1/1;
+      }
     }
-    li:first-child {
-      grid-column: 1/3;
+    a {
+      margin: 0.8rem 0;
     }
     li {
-      padding: 1rem 0;
+      padding: 1.5rem 0;
       width: 100%;
       margin: 0;
     }
@@ -1410,8 +1495,8 @@ li {
     }
     .locate {
       width: 10%;
-      left: 9rem;
-      top: 8rem;
+      left: 10rem;
+      top: 7.5rem;
     }
     .contact-location {
       object-fit: cover;
@@ -1481,6 +1566,23 @@ li {
     .dotted {
       bottom: -1rem;
     }
+  }
+  .repCart {
+    grid-template-columns: repeat(1, 1fr);
+    border-right: none;
+    border-top: 2px solid #0c356a;
+  }
+  .rep__info {
+    grid-column: 1/1;
+    grid-row: 2/2;
+  }
+  .rep__phone {
+    grid-column: 1/1;
+    padding: 1rem 0;
+  }
+  .rep__title {
+    grid-column: 1/1;
+    grid-row: 1/1;
   }
 }
 @media only screen and (max-width: 335px) {

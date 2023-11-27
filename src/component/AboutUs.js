@@ -21,7 +21,7 @@ export default function AboutUs({ isEnglish }) {
                 ? "Azerbaijan diesel car manufacturers"
                 : "خودروسازان دیزلی آذربایجان"}
             </h4>
-            <p>
+            <p align="justify" className={!isEnglish && "enlastline"}>
               {isEnglish
                 ? `Azerbaijan diesel manufacturers are affiliated companies of Industries Group
                 Iran Tractor Manufacturing is located in Tabriz, with the purpose of production and supply
@@ -30,12 +30,12 @@ export default function AboutUs({ isEnglish }) {
                 : `شرکت خودروسازان دیزلی آذربایجان از شرکت‌های وابسته به گروه صنایع
               تراکتورسازی ایران واقع در تبریز می‌باشد که با هدف تولید و عرضه
               خودروهای حمل بار کامیونت و کامیون سبک و نیمه سنگین تاسیس شده‌ است
-              .`}
+              `}
             </p>
           </div>
         </div>
         <div className="about_text">
-          <p>
+          <p align="justify" className={!isEnglish && "enlastline"}>
             {isEnglish
               ? `Azarakhsh series trucks and Cadia series trucks in this company
               Designed, manufactured and supplied. Design and production of Azarakhsh series products and
@@ -60,7 +60,7 @@ export default function AboutUs({ isEnglish }) {
             این محصولات در قسمت ‌های دیگر تارنمای اینترنتی در دسترس علاقمندان
             قرار گرفته است . درسال 1399 سایت تولید کاربری خودروهای تجاری نیز در
             جوار کارخانه راه اندازی شده و پروانه بهره برداری کاربری سازی نی از
-            سازمان صنعت ، معدن و تجارت اخذ شده است .`}
+            سازمان صنعت ، معدن و تجارت اخذ شده است `}
           </p>
           <div className="about-img-bottom">
             <img
@@ -75,7 +75,10 @@ export default function AboutUs({ isEnglish }) {
             />
           </div>
 
-          <p className="about-bottomText">
+          <p
+            className={`about-bottomText ${!isEnglish && "enlastline"}`}
+            align="justify"
+          >
             {isEnglish
               ? `The cooperation of domestic component manufacturers, after-sales service activists, companies
               Utilization, academics and knowledge-based companies, car repairers
@@ -88,7 +91,7 @@ export default function AboutUs({ isEnglish }) {
             کامیونت و کامیون را در تولید باکیفیت، اقتصادی تر و ارائه خدمات مناسب
             تر به مشتریان می فشاریم . امید است اقدامات این شرکت در رفع نیازهای
             کشور عزیزمان در حوزه حمل و نقل کالا و جلب رضایت هموطنان و رانندگان
-            محترم مفید و موثر واقع شود .`}
+            محترم مفید و موثر واقع شود`}
           </p>
         </div>
       </div>

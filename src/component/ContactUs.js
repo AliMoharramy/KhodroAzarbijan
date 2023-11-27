@@ -29,18 +29,18 @@ export default function ContactUs({ isEnglish }) {
               {isEnglish ? "Ways of communication :" : ": راههای ارتباطی"}
             </h3>
             <p>دفتر مرکزی :34246088- 041</p>
-            <p>امور مشتریان :34260426- 041</p>
+            <p>امور مشتریان :34245954- 041</p>
             <p>ایمیل : Mail@advmco.ir</p>
           </div>
         </div>
-        <a href="https://maps.app.goo.gl/31rmZfLtBrrdM5YH8">
+        <a href="https://maps.app.goo.gl/WrWkBZNUSpCt9YWS7">
           <img
             src={require("../media/icons8-location-96.png")}
             className="locate"
             alt=""
           />
           <img
-            src={require("../media/Screenshot 2023-11-11 at 20-31-46 Google Maps.png")}
+            src={require("../media/location.png")}
             className="contact-location"
             alt=""
           />
