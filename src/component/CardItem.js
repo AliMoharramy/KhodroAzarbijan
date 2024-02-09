@@ -16,7 +16,7 @@ export default function CardItem({
     >
       <div className="card__img-div">
         {fromSer ? (
-          <img src={require("../media/dsc_0333_9z4y.jpg")} alt="" />
+          <img src={require("../media/c50021.jpg")} alt="" />
         ) : (
           <img src={image} alt="" />
         )}

@@ -1,4 +1,5 @@
 export default function TopBanner() {
+  console.log("AMHDEV");
   return (
     <div className="header-top-part">
       <div className="azarbaijanLogo">

@@ -41,7 +41,9 @@ export default function NewsPage({
             )}
             <div className="newsInfo-details">
               <h3>{isEnglish ? Newsap.titleEn : Newsap.title}</h3>
-              <p>{isEnglish ? Newsap.textEn : Newsap.text}</p>
+              <p align="justify" className={!isEnglish && "enlastline"}>
+                {isEnglish ? Newsap.textEn : Newsap.text}
+              </p>
             </div>
             {Newsap.albume && (
               <div className="newsImages">
@@ -49,7 +51,7 @@ export default function NewsPage({
                   {Array.from({ length: Newsap.albume.length }, (_, i) => {
                     return (
                       <div>
-                        <img
+                        <imgx
                           src={Newsap.albume[i]}
                           alt="img"
                           onClick={(e) => setIsPopUpImg([e.target.src, true])}

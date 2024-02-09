@@ -1,0 +1,59 @@
+.authentication {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 1.2rem;
+  transition: 0.2s;
+  form {
+    display: flex;
+    flex-direction: column;
+    background-color: cadetblue;
+    border-radius: 10px;
+    color: white;
+    padding: 2rem;
+    transition: 0.3s;
+    input {
+      margin: 1rem 0;
+      border: none;
+      padding: 0.2rem;
+    }
+    button {
+      margin-top: 1.5rem;
+      border: none;
+      background-color: blueviolet;
+      color: white;
+      padding: 0.5rem 0;
+      transition: 0.2s;
+      border-radius: 5px;
+      &:hover {
+        background-color: rgb(93, 29, 153);
+        border-radius: 10px;
+      }
+    }
+  }
+}
+.invalid {
+  -webkit-box-shadow: 0px 0px 45px 13px #c21010;
+  box-shadow: 0px 0px 45px 13px #c21010;
+  button {
+    background-color: #c21010 !important;
+  }
+}
+.addNews_title,
+.addProduct_title {
+  background-color: rgb(93, 29, 153);
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+.cardHolder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12rem;
+  margin: 2rem;
+  .news__card {
+    grid-column: 2/3;
+  }
+}

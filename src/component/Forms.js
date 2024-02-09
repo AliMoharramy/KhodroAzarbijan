@@ -5,18 +5,22 @@ import TireSurveyForm from "./TireSurveyForm";
 
 export default function Forms({ setSelectedForm, selectedForm, isEnglish }) {
   const SelectForms = [
-    "فروش",
     "نظرسنجی تایر",
     "نظرسنجی محصول",
     "ثبت شکایت تایر",
     "ثبت شکایت محصول",
   ];
   const SelectFormsEn = [
-    "Sale",
     "Tyre Survey",
     "Product Survey",
     "Tyre Complaint Registration",
     "Product Complaint Registration",
+  ];
+  const links = [
+    "https://survey.porsline.ir/s/phBDNWPD",
+    "https://survey.porsline.ir/s/phBDNWPD",
+    "https://survey.porsline.ir/s/Isbgh2ub",
+    "https://survey.porsline.ir/s/Isbgh2ub",
   ];
   return (
     <section className="Form">
@@ -31,9 +35,17 @@ export default function Forms({ setSelectedForm, selectedForm, isEnglish }) {
         </div> */}
         <div className="forms-right">
           <ul>
+            <a href={require("../media/Tire Manual.pdf")} download>
+              <li>
+                {isEnglish ? "Tire application guide" : "راهنمای کاربرد تایر"}
+              </li>
+            </a>
+            <a href={require("../media/EB0037-03 _TRUCK.pdf")} download>
+              <li>{isEnglish ? "Product guide" : "راهنمای محصول"}</li>
+            </a>
             {Array.from({ length: SelectForms.length }, (_, i) => {
               return (
-                <a href="">
+                <a href={links[i]}>
                   <li
                     className={
                       selectedForm === SelectForms[i] && "form-activeBtn"
