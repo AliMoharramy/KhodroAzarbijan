@@ -16,6 +16,7 @@ import PopupImg from "./component/PopupImg";
 import ProductsInfo from "./component/JsonFiles/ProductsInfo.json";
 import Loading from "./component/Loading";
 import TopBanner from "./component/TopBanner";
+import ErrorPage from "./component/ErrorPage";
 
 function App({ AllNewsap }) {
   const [page, setPage] = useState("صفحه اصلی");
@@ -98,6 +99,7 @@ function App({ AllNewsap }) {
 
   return (
     <div className={`App ${isEnglish ? "englishVersion" : ""}`}>
+      <ErrorPage />
       {isLoading && <Loading />}
       {isPopUpImg[1] && (
         <PopupImg item={isPopUpImg[0]} setIsPopUpImg={setIsPopUpImg} />

@@ -1,6 +1,166 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
 @import url("../component/adminPage/_adminPage.scss");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap");
+.palybtn {
+  margin-top: 15rem;
+  color: rgb(142, 142, 142);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+}
+.palybtn button {
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(142, 142, 142);
+  margin-right: 0.7rem;
+  padding: 0.2rem 1rem;
+  border: 1px solid rgb(136, 136, 136);
+}
+.palybtn button:hover {
+  background-color: rgb(142, 142, 142);
+  color: #222222;
+}
+.palybtn p {
+  margin-bottom: 0;
+}
+
+.willBeRemove {
+  position: fixed;
+  z-index: 999999;
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background-color: #222222;
+}
+
+.showErrorsof {
+  font-family: "Rubik", sans-serif;
+  color: rgb(142, 142, 142);
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.secendStep {
+  color: rgb(142, 142, 142);
+  font-size: 2.2rem;
+  font-family: "Lalezar", system-ui;
+}
+
+.love {
+  font-family: "Sixtyfour", sans-serif;
+  font-size: 3rem;
+  color: rgb(211, 65, 12);
+  text-align: center;
+}
+
+.thidOne {
+  color: rgb(142, 142, 142);
+  font-size: 2rem;
+  font-family: "Lalezar", system-ui;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thidOne i {
+  color: rgb(3, 91, 163);
+  margin-right: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::-moz-placeholder {
+  color: transparent;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:-moz-placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  -o-border-image: linear-gradient(to right, #11998e, #38ef7d);
+     border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 576px) {
+  .form__group {
+    width: 60%;
+    margin-top: -10rem;
+  }
+  .showErrorsof {
+    width: 80%;
+  }
+}
+.secendStepp {
+  text-align: center;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
 .App {
   position: relative;
   background-color: #eeeeee;
@@ -148,6 +308,34 @@ li {
 
 .footer__logo {
   width: 60%;
+}
+
+.errorpage {
+  font-size: 5rem;
+  font-weight: 900;
+  position: fixed !important;
+  color: white;
+  background: rgba(255, 0, 0, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  z-index: 99999;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(146, 0, 0, 0.822);
+}
+.errorpage span {
+  font-size: 1rem;
+}
+
+.hider {
+  display: none;
 }
 
 .loadingContainer {

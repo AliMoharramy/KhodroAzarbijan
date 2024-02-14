@@ -10,6 +10,158 @@ $bg-color: #073059;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+//will be delete
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+.palybtn {
+  margin-top: 15rem;
+  color: rgb(142, 142, 142);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  button {
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(142, 142, 142);
+    margin-right: 0.7rem;
+    padding: 0.2rem 1rem;
+    border: 1px solid rgb(136, 136, 136);
+    &:hover {
+      background-color: rgb(142, 142, 142);
+      color: #222222;
+    }
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+.willBeRemove {
+  position: fixed;
+  z-index: 999999;
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background-color: #222222;
+}
+.showErrorsof {
+  font-family: "Rubik", sans-serif;
+  color: rgb(142, 142, 142);
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+.secendStep {
+  color: rgb(142, 142, 142);
+  font-size: 2.2rem;
+  font-family: "Lalezar", system-ui;
+}
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap");
+.love {
+  font-family: "Sixtyfour", sans-serif;
+  font-size: 3rem;
+  color: rgb(211, 65, 12);
+  text-align: center;
+}
+.thidOne {
+  color: rgb(142, 142, 142);
+  font-size: 2rem;
+  font-family: "Lalezar", system-ui;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    color: rgb(3, 91, 163);
+    margin-right: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+}
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #fff;
+$gray: #9b9b9b;
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight: 700;
+  }
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary, $secondary);
+  border-image-slice: 1;
+}
+@media only screen and (max-width: 576px) {
+  .form__group {
+    width: 60%;
+    margin-top: -10rem;
+  }
+  .showErrorsof {
+    width: 80%;
+  }
+}
+.secendStepp {
+  text-align: center;
+}
+/* reset input */
+.form__field {
+  &:required,
+  &:invalid {
+    box-shadow: none;
+  }
+}
 //App
 .App {
   position: relative;
@@ -145,6 +297,32 @@ li {
 }
 .footer__logo {
   width: 60%;
+}
+.errorpage {
+  font-size: 5rem;
+  font-weight: 900;
+  position: fixed !important;
+  color: white;
+  background: rgba(255, 0, 0, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  z-index: 99999;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(146, 0, 0, 0.822);
+  span {
+    font-size: 1rem;
+  }
+}
+.hider {
+  display: none;
 }
 .loadingContainer {
   position: fixed;

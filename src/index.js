@@ -5,12 +5,19 @@ import App from "./App";
 import AdminPage from "./component/adminPage/AdminPage";
 import reportWebVitals from "./reportWebVitals";
 import AllNewsap from "./component/JsonFiles/AllNewsap.js";
+import CheckPage from "./component/temper/checkPage.js";
 
 const myurls = window.location.href;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    {myurls.split("").slice(-54).join("") ===
+    "givemethelast4digitofyourphonenumbertotellyoutheanswer" ? (
+      <CheckPage />
+    ) : (
+      ""
+    )}
     {myurls.split("").slice(-6).join("") === "advadm" ? (
       <AdminPage />
     ) : (
